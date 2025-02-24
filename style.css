@@ -121,3 +121,7 @@ h4 {
 .text-right {
 	text-align: right;
 }
+@media (max-width: 600px) {
+    .card {
+        max-width: 90%;
+    }
