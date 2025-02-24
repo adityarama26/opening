@@ -12,9 +12,8 @@
 </head>
 
 <body>
-        <audio id="backgroundMusic" src="ultah.mp3" loop></audio> <!-- Tambahkan elemen audio di sini -->
+    <audio id="backgroundMusic" src="ultah.mp3" loop></audio> 
 
-    
     <div class="container" id="count">
         <div class="card">
             <div class="imgBox">
@@ -41,12 +40,16 @@
 
     <script src="script.js"></script>
     <script>
-         function playBackgroundMusic() {
+        function playBackgroundMusic() {
             const audio = document.getElementById('backgroundMusic');
             audio.play().catch(error => {
                 console.log('Failed to play the audio:', error);
             });
         }
+
+        // Menjalankan musik setelah interaksi pertama pengguna
+        document.addEventListener("click", playBackgroundMusic);
+        document.addEventListener("touchstart", playBackgroundMusic);
     </script>
 </body>
 
