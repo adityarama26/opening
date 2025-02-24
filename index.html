@@ -12,12 +12,8 @@
 </head>
 
 <body>
-    <audio id="myAudio" muted loop>
-        <source src="ultah.mp3" type="audio/mpeg">
-    </audio>
+        <audio id="backgroundMusic" src="ultah.mp3" loop></audio> <!-- Tambahkan elemen audio di sini -->
 
-    <canvas id="c"></canvas>
-    <canvas id="confetti"></canvas>
     
     <div class="container" id="count">
         <div class="card">
@@ -45,13 +41,12 @@
 
     <script src="script.js"></script>
     <script>
-        document.body.addEventListener("click", function () {
-            let audio = document.getElementById("myAudio");
-            if (audio.muted) {
-                audio.muted = false;
-                audio.play();
-            }
-        });
+         function playBackgroundMusic() {
+            const audio = document.getElementById('backgroundMusic');
+            audio.play().catch(error => {
+                console.log('Failed to play the audio:', error);
+            });
+        }
     </script>
 </body>
 
